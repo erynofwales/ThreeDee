@@ -107,17 +107,7 @@ public struct Vector3: Vector {
             data[2] = value
         }
     }
-
-    // MARK: Operators
-
-    public func cross(rhs: Vector3) -> Vector3 {
-        return Vector3(x: data[1] * rhs.data[2] - data[2] * rhs.data[1],
-                       y: data[2] * rhs.data[0] - data[0] * rhs.data[2],
-                       z: data[0] * rhs.data[1] - data[1] * rhs.data[0])
-    }
 }
-
-//------------------------------------------------------------------------------
 
 public struct Vector4: Vector {
     private var data: [Float]
@@ -177,6 +167,14 @@ extension Vector {
             sum += self[i] * rhs[i]
         }
         return sum
+    }
+}
+
+extension Vector3 {
+    public func cross(rhs: Vector3) -> Vector3 {
+        return Vector3(x: data[1] * rhs.data[2] - data[2] * rhs.data[1],
+            y: data[2] * rhs.data[0] - data[0] * rhs.data[2],
+            z: data[0] * rhs.data[1] - data[1] * rhs.data[0])
     }
 }
 
