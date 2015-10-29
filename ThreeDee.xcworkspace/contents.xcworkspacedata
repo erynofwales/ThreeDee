@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:COLLADA/COLLADA.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Math/Math.xcodeproj">
    </FileRef>
 </Workspace>
