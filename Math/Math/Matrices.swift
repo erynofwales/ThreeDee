@@ -90,32 +90,6 @@ struct Matrix3 {
 
 // MARK: Vectors
 
-public struct Vector4<T: FloatingPointType> {
-    static func size() -> Int {
-        return 4
-    }
-
-    public private(set) var data: [T]
-
-    init() {
-        self.init(x: T(0), y: T(0), z: T(0), w: T(0))
-    }
-
-    init(x: T, y: T, z: T, w: T = T(1)) {
-        data = [x, y, z, w]
-    }
-
-    subscript(idx: Int) -> T {
-        get {
-            return data[idx]
-        }
-        set(value) {
-            data[idx] = value
-        }
-    }
-}
-
-
 public struct Vector3: Vector {
     private var data: [Float]
 
@@ -148,6 +122,73 @@ public struct Vector3: Vector {
         set(value) {
             data[idx] = value
         }
+    }
+
+    // MARK: Element access
+
+    var x: Float {
+        return data[0]
+    }
+
+    var y: Float {
+        return data[1]
+    }
+
+    var z: Float {
+        return data[2]
+    }
+}
+
+public struct Vector4: Vector {
+    private var data: [Float]
+
+    init() {
+        self.init(x: 0.0, y: 0.0, z: 0.0)
+    }
+
+    init(x: Float, y: Float, z: Float, w: Float = 1.0) {
+        data = [x, y, z, w]
+    }
+
+    var length: Float {
+        return sqrtf(length2)
+    }
+
+    var length2: Float {
+        return data.reduce(0.0) { $0 + $1 * $1 }
+    }
+
+    // MARK: SequenceType-ish
+
+    var count: Int {
+        return data.count
+    }
+
+    public subscript(idx: Int) -> Float {
+        get {
+            return data[idx]
+        }
+        set(value) {
+            data[idx] = value
+        }
+    }
+
+    // MARK: Element access
+
+    var x: Float {
+        return data[0]
+    }
+
+    var y: Float {
+        return data[1]
+    }
+
+    var z: Float {
+        return data[2]
+    }
+
+    var w: Float {
+        return data[3]
     }
 }
 
