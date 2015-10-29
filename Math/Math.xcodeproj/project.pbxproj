@@ -10,7 +10,7 @@
 		C005DFFE1BE1CBA700F1BD3C /* Math.h in Headers */ = {isa = PBXBuildFile; fileRef = C005DFFD1BE1CBA700F1BD3C /* Math.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C005E0051BE1CBA800F1BD3C /* Math.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C005DFFA1BE1CBA700F1BD3C /* Math.framework */; };
 		C005E00A1BE1CBA800F1BD3C /* MathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005E0091BE1CBA800F1BD3C /* MathTests.swift */; };
-		C005E0391BE1CC7A00F1BD3C /* Matrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005E0381BE1CC7A00F1BD3C /* Matrices.swift */; };
+		C005E0391BE1CC7A00F1BD3C /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005E0381BE1CC7A00F1BD3C /* Matrix.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,7 @@
 		C005E0041BE1CBA800F1BD3C /* MathTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MathTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C005E0091BE1CBA800F1BD3C /* MathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathTests.swift; sourceTree = "<group>"; };
 		C005E00B1BE1CBA800F1BD3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C005E0381BE1CC7A00F1BD3C /* Matrices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrices.swift; sourceTree = "<group>"; };
+		C005E0381BE1CC7A00F1BD3C /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				C005DFFD1BE1CBA700F1BD3C /* Math.h */,
-				C005E0381BE1CC7A00F1BD3C /* Matrices.swift */,
+				C005E0381BE1CC7A00F1BD3C /* Matrix.swift */,
 				C005DFFF1BE1CBA700F1BD3C /* Info.plist */,
 			);
 			path = Math;
@@ -197,7 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C005E0391BE1CC7A00F1BD3C /* Matrices.swift in Sources */,
+				C005E0391BE1CC7A00F1BD3C /* Matrix.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
