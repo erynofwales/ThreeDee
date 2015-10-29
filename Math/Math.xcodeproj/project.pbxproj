@@ -11,6 +11,7 @@
 		C005E0051BE1CBA800F1BD3C /* Math.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C005DFFA1BE1CBA700F1BD3C /* Math.framework */; };
 		C005E00A1BE1CBA800F1BD3C /* MathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005E0091BE1CBA800F1BD3C /* MathTests.swift */; };
 		C005E0391BE1CC7A00F1BD3C /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005E0381BE1CC7A00F1BD3C /* Matrix.swift */; };
+		C04449C11BE26A0700ABF046 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04449C01BE26A0700ABF046 /* Vector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		C005E0091BE1CBA800F1BD3C /* MathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathTests.swift; sourceTree = "<group>"; };
 		C005E00B1BE1CBA800F1BD3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C005E0381BE1CC7A00F1BD3C /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		C04449C01BE26A0700ABF046 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				C005DFFD1BE1CBA700F1BD3C /* Math.h */,
 				C005E0381BE1CC7A00F1BD3C /* Matrix.swift */,
+				C04449C01BE26A0700ABF046 /* Vector.swift */,
 				C005DFFF1BE1CBA700F1BD3C /* Info.plist */,
 			);
 			path = Math;
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C04449C11BE26A0700ABF046 /* Vector.swift in Sources */,
 				C005E0391BE1CC7A00F1BD3C /* Matrix.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

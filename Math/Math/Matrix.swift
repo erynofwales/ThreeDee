@@ -20,21 +20,6 @@ protocol Matrix {
     subscript(row: Int, col: Int) -> ElementType { get set }
 }
 
-/** A vector. */
-protocol Vector {
-    init()
-
-    /** Number of elements in the vector. */
-    var count: Int { get }
-    /** Element access by index. */
-    subscript(idx: Int) -> Float { get set }
-
-    /** Length of the vector. */
-    var length2: Float { get }
-    /** Length-squared of the vector. */
-    var length: Float { get }
-}
-
 // MARK: - Matrices
 
 public struct Matrix4<T: FloatingPointType>: Matrix {
@@ -90,107 +75,7 @@ struct Matrix3 {
 
 // MARK: Vectors
 
-public struct Vector3: Vector {
-    private var data: [Float]
 
-    init() {
-        self.init(x: 0.0, y: 0.0, z: 0.0)
-    }
-
-    init(x: Float, y: Float, z: Float) {
-        data = [x, y, z]
-    }
-
-    var length: Float {
-        return sqrtf(length2)
-    }
-
-    var length2: Float {
-        return data.reduce(0.0) { $0 + $1 * $1 }
-    }
-
-    // MARK: Sequence-ish
-
-    var count: Int {
-        return 3
-    }
-
-    public subscript(idx: Int) -> Float {
-        get {
-            return data[idx]
-        }
-        set(value) {
-            data[idx] = value
-        }
-    }
-
-    // MARK: Element access
-
-    var x: Float {
-        return data[0]
-    }
-
-    var y: Float {
-        return data[1]
-    }
-
-    var z: Float {
-        return data[2]
-    }
-}
-
-public struct Vector4: Vector {
-    private var data: [Float]
-
-    init() {
-        self.init(x: 0.0, y: 0.0, z: 0.0)
-    }
-
-    init(x: Float, y: Float, z: Float, w: Float = 1.0) {
-        data = [x, y, z, w]
-    }
-
-    var length: Float {
-        return sqrtf(length2)
-    }
-
-    var length2: Float {
-        return data.reduce(0.0) { $0 + $1 * $1 }
-    }
-
-    // MARK: SequenceType-ish
-
-    var count: Int {
-        return data.count
-    }
-
-    public subscript(idx: Int) -> Float {
-        get {
-            return data[idx]
-        }
-        set(value) {
-            data[idx] = value
-        }
-    }
-
-    // MARK: Element access
-
-    var x: Float {
-        return data[0]
-    }
-
-    var y: Float {
-        return data[1]
-    }
-
-    var z: Float {
-        return data[2]
-    }
-
-    var w: Float {
-        return data[3]
-    }
-}
 
 // MARK: - Matrix-Scalar Multiplication
 
