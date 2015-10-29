@@ -173,8 +173,8 @@ extension Vector {
 extension Vector3 {
     public func cross(rhs: Vector3) -> Vector3 {
         return Vector3(x: data[1] * rhs.data[2] - data[2] * rhs.data[1],
-            y: data[2] * rhs.data[0] - data[0] * rhs.data[2],
-            z: data[0] * rhs.data[1] - data[1] * rhs.data[0])
+                       y: data[2] * rhs.data[0] - data[0] * rhs.data[2],
+                       z: data[0] * rhs.data[1] - data[1] * rhs.data[0])
     }
 }
 
