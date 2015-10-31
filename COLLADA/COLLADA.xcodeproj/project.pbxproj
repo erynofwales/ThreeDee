@@ -10,6 +10,8 @@
 		C005E0221BE1CC3300F1BD3C /* COLLADA.h in Headers */ = {isa = PBXBuildFile; fileRef = C005E0211BE1CC3300F1BD3C /* COLLADA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C005E0291BE1CC3300F1BD3C /* COLLADA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C005E01E1BE1CC3300F1BD3C /* COLLADA.framework */; };
 		C005E02E1BE1CC3300F1BD3C /* COLLADATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005E02D1BE1CC3300F1BD3C /* COLLADATests.swift */; };
+		C04449C31BE3422A00ABF046 /* COLLADA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04449C21BE3422A00ABF046 /* COLLADA.swift */; };
+		C04449C51BE5142200ABF046 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04449C41BE5142200ABF046 /* Source.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		C005E0281BE1CC3300F1BD3C /* COLLADATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = COLLADATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C005E02D1BE1CC3300F1BD3C /* COLLADATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COLLADATests.swift; sourceTree = "<group>"; };
 		C005E02F1BE1CC3300F1BD3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C04449C21BE3422A00ABF046 /* COLLADA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COLLADA.swift; sourceTree = "<group>"; };
+		C04449C41BE5142200ABF046 /* Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				C005E0211BE1CC3300F1BD3C /* COLLADA.h */,
 				C005E0231BE1CC3300F1BD3C /* Info.plist */,
+				C04449C21BE3422A00ABF046 /* COLLADA.swift */,
+				C04449C41BE5142200ABF046 /* Source.swift */,
 			);
 			path = COLLADA;
 			sourceTree = "<group>";
@@ -194,6 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C04449C51BE5142200ABF046 /* Source.swift in Sources */,
+				C04449C31BE3422A00ABF046 /* COLLADA.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +313,7 @@
 		C005E0331BE1CC3300F1BD3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -317,12 +326,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.erynwells.graphics.COLLADA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		C005E0341BE1CC3300F1BD3C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -379,6 +390,7 @@
 				C005E0341BE1CC3300F1BD3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C005E0351BE1CC3300F1BD3C /* Build configuration list for PBXNativeTarget "COLLADATests" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +399,7 @@
 				C005E0371BE1CC3300F1BD3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
