@@ -15,7 +15,8 @@ public protocol Vector {
     init()
 
     /** Number of elements in the vector. */
-    var count: Int { get }
+    static var count: Int { get }
+
     /** Element access by index. */
     subscript(idx: Int) -> Float { get set }
 
@@ -37,7 +38,7 @@ extension Vector {
 
     public var length2: Float {
         var l2: Float = 0.0
-        for i in 0..<self.count {
+        for i in 0..<Self.count {
             l2 += self[i] * self[i]
         }
         return l2
@@ -66,8 +67,8 @@ public struct Vector3: Vector {
 
     // MARK: CollectionType-ish
 
-    public var count: Int {
-        return data.count
+    public static var count: Int {
+        return 3
     }
 
     public subscript(idx: Int) -> Float {
@@ -126,8 +127,8 @@ public struct Vector4: Vector {
 
     // MARK: SequenceType-ish
 
-    public var count: Int {
-        return data.count
+    public static var count: Int {
+        return 4
     }
 
     public subscript(idx: Int) -> Float {
@@ -163,7 +164,7 @@ public struct Vector4: Vector {
 extension Vector {
     public func dot(rhs: Self) -> Float {
         var sum: Float = 0.0
-        for i in 0..<self.count {
+        for i in 0..<Self.count {
             sum += self[i] * rhs[i]
         }
         return sum
@@ -180,39 +181,39 @@ extension Vector3 {
 
 public prefix func -<T: Vector>(v: T) -> T {
     var out = v
-    for i in 0..<out.count {
+    for i in 0..<T.count {
         out[i] -= -out[i]
     }
     return out
 }
 
-public func +=<T: Vector>(inout rhs: T, lhs: T) {
-    for i in 0..<rhs.count {
-        rhs[i] += lhs[i]
+public func +=<T: Vector>(inout lhs: T, rhs: T) {
+    for i in 0..<T.count {
+        lhs[i] += rhs[i]
     }
 }
 
-public func +<T: Vector>(rhs: T, lhs: T) -> T {
-    var out = rhs
-    out += lhs
+public func +<T: Vector>(lhs: T, rhs: T) -> T {
+    var out = lhs
+    out += rhs
     return out
 }
 
-public func -=<T: Vector>(inout rhs: T, lhs: T) {
-    for i in 0..<rhs.count {
-        rhs[i] -= lhs[i]
+public func -=<T: Vector>(inout lhs: T, rhs: T) {
+    for i in 0..<T.count {
+        lhs[i] -= rhs[i]
     }
 }
 
-public func -<T: Vector>(rhs: T, lhs: T) -> T {
-    var out = rhs
-    out -= lhs
+public func -<T: Vector>(lhs: T, rhs: T) -> T {
+    var out = lhs
+    out -= rhs
     return out
 }
 
-public func *=<T: Vector>(inout rhs: T, lhs: Float) {
-    for i in 0..<rhs.count {
-        rhs[i] *= lhs
+public func *=<T: Vector>(inout lhs: T, rhs: Float) {
+    for i in 0..<T.count {
+        lhs[i] *= rhs
     }
 }
 
@@ -226,8 +227,8 @@ public func *<T: Vector>(lhs: T, rhs: Float) -> T {
     return rhs * lhs
 }
 
-public func /=<T: Vector>(inout rhs: T, lhs: Float) {
-    rhs *= (1.0 / lhs)
+public func /=<T: Vector>(inout lhs: T, rhs: Float) {
+    lhs *= (1.0 / rhs)
 }
 
 public func /<T: Vector>(lhs: T, rhs: Float) -> T {
@@ -235,16 +236,16 @@ public func /<T: Vector>(lhs: T, rhs: Float) -> T {
 }
 
 infix operator ∙ { associativity left precedence 150 }
-public func ∙<T: Vector>(rhs: T, lhs: T) -> Float {
-    return rhs.dot(lhs)
+public func ∙<T: Vector>(lhs: T, rhs: T) -> Float {
+    return lhs.dot(rhs)
 }
 
 infix operator ×= { associativity left precedence 150 }
-public func ×=(inout rhs: Vector3, lhs: Vector3) {
-    rhs = rhs.cross(lhs)
+public func ×=(inout lhs: Vector3, rhs: Vector3) {
+    lhs = lhs.cross(rhs)
 }
 
 infix operator × { associativity left precedence 150 }
-public func ×(rhs: Vector3, lhs: Vector3) -> Vector3 {
-    return rhs.cross(lhs)
+public func ×(lhs: Vector3, rhs: Vector3) -> Vector3 {
+    return lhs.cross(rhs)
 }
