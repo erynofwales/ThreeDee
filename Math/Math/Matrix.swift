@@ -8,6 +8,7 @@
 
 /** A square matrix. */
 public protocol Matrix {
+    /** The identity matrix. */
     static var identity: Self { get }
 
     /** Number of elements in the underlying container. */
@@ -19,8 +20,18 @@ public protocol Matrix {
      */
     static var dimension: Int { get }
 
+    /** Initialize a Matrix filled with zeroes. */
     init()
+
+    /** 
+     * Initialize a Matrix with a given array of values. The number of values
+     * must match the count of the array; otherwise, a MatrixError.InvalidSize
+     * error is thrown.
+     */
     init(values: [Float]) throws
+
+    /** The underlying data array. */
+    var data: [Float] { get }
 
     /** 
      * Element access
@@ -52,7 +63,7 @@ public struct Matrix4: Matrix {
         return matrix
     }()
 
-    private var data: [Float]
+    public private(set) var data: [Float]
 
     public init() {
         data = [Float](count: Matrix4.count, repeatedValue: Float(0))
@@ -64,6 +75,7 @@ public struct Matrix4: Matrix {
         }
         data = values
     }
+
 
     public static var dimension: Int {
         return 4
@@ -102,7 +114,7 @@ public struct Matrix3: Matrix {
         return matrix
     }()
 
-    private var data: [Float]
+    public private(set) var data: [Float]
 
     public init() {
         data = [Float](count: Matrix3.count, repeatedValue: Float(0))
@@ -139,7 +151,7 @@ public struct Matrix3: Matrix {
 
     /** Convert a (row, col) pair into an index into the data array. */
     private func indexFromCoordinates(row: Int, _ col: Int) -> Int {
-        return row * Matrix4.dimension + col
+        return row * Matrix3.dimension + col
     }
 }
 
