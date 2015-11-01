@@ -181,6 +181,32 @@ public func /<T: Matrix>(lhs: T, rhs: Float) -> T {
     return out
 }
 
+// MARK: Matrix addition
+
+public func +=<T: Matrix>(inout lhs: T, rhs: T) {
+    for i in 0..<T.dimension {
+        lhs[i] += rhs[i]
+    }
+}
+
+public func +<T: Matrix>(lhs: T, rhs: T) -> T {
+    var out = lhs
+    out += rhs
+    return out
+}
+
+public func -=<T: Matrix>(inout lhs: T, rhs: T) {
+    for i in 0..<T.dimension {
+        lhs[i] -= rhs[i]
+    }
+}
+
+public func -<T: Matrix>(lhs: T, rhs: T) -> T {
+    var out = lhs
+    out -= rhs
+    return out
+}
+
 // MARK: Matrix-Matrix multiplication
 
 public func *=<T: Matrix>(inout lhs: T, rhs: T) {
@@ -221,17 +247,3 @@ public func *(lhs: Matrix3, rhs: Vector3) -> Vector3 {
     }
     return out
 }
-
-//func *<T: FloatingPointType>(matrix: Matrix4<T>, scalar: T) -> Matrix4<T> {
-//    var out: Matrix4<T>
-//    for i in 0..<out.data.count {
-//        out[i] = matrix.data[i] * scalar
-//    }
-//    return out
-//}
-
-// MARK: - Matrix-Vector Multiplication
-
-//func *<T: FloatingPointType>(matrix: Matrix4<T>, vector: Vector4<T>) -> Vector4<T> {
-//    return Vector4<T>()
-//}
