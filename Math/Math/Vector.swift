@@ -240,12 +240,12 @@ public func ∙<T: Vector>(lhs: T, rhs: T) -> Float {
     return lhs.dot(rhs)
 }
 
-infix operator ×= { associativity left precedence 150 }
+infix operator ×= { associativity left precedence 151 }
 public func ×=(inout lhs: Vector3, rhs: Vector3) {
     lhs = lhs.cross(rhs)
 }
 
-infix operator × { associativity left precedence 150 }
+infix operator × { associativity left precedence 151 }
 public func ×(lhs: Vector3, rhs: Vector3) -> Vector3 {
     return lhs.cross(rhs)
 }
