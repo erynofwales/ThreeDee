@@ -270,19 +270,22 @@ public func -<T: Matrix>(lhs: T, rhs: T) -> T {
 // MARK: Matrix-Matrix multiplication
 
 public func *=<T: Matrix>(inout lhs: T, rhs: T) {
-    for i in 0..<T.dimension {
-        for j in 0..<T.dimension {
-            // Each cell is Sigma(k=0, M)(lhs[ik] * rhs[kj]
-            for k in 0..<T.dimension {
-                lhs[i,j] += lhs[i,k] * rhs[k,j]
-            }
-        }
+    let result = lhs * rhs
+    for i in 0..<T.count {
+        lhs[i] = result[i]
     }
 }
 
 public func *<T: Matrix>(lhs: T, rhs: T) -> T {
-    var out = lhs
-    out *= rhs
+    var out = T()
+    for i in 0..<T.dimension {
+        for j in 0..<T.dimension {
+            // Each cell is Sigma(k=0, M)(lhs[ik] * rhs[kj]
+            for k in 0..<T.dimension {
+                out[i,j] += lhs[i,k] * rhs[k,j]
+            }
+        }
+    }
     return out
 }
 
