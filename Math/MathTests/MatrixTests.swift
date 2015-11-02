@@ -42,7 +42,7 @@ class Matrix4SubscriptTests: XCTestCase {
         var value: Int = 0
         for i in 0..<Matrix4.dimension {
             for j in 0..<Matrix4.dimension {
-                XCTAssertEqual(m[i,j], Float(value++))
+                XCTAssertEqual(m[i,j], values[value++])
             }
         }
     }
@@ -88,15 +88,12 @@ class Matrix3SubscriptTests: XCTestCase {
     }
 
     func testThatRowColumnSubscriptWorks() {
-        XCTAssertEqual(m[0,0], m.data[0])
-        XCTAssertEqual(m[0,1], m.data[1])
-        XCTAssertEqual(m[0,2], m.data[2])
-        XCTAssertEqual(m[1,0], m.data[3])
-        XCTAssertEqual(m[1,1], m.data[4])
-        XCTAssertEqual(m[1,2], m.data[5])
-        XCTAssertEqual(m[2,0], m.data[6])
-        XCTAssertEqual(m[2,1], m.data[7])
-        XCTAssertEqual(m[2,2], m.data[8])
+        var value: Int = 0
+        for i in 0..<Matrix3.dimension {
+            for j in 0..<Matrix3.dimension {
+                XCTAssertEqual(m[i,j], values[value++])
+            }
+        }
     }
 
     func testThatSingleSubscriptAssignmentWorks() {
