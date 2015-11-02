@@ -9,6 +9,8 @@
 import XCTest
 @testable import Math
 
+// MARK: - Matrix4
+
 class Matrix4Tests: XCTestCase {
     func testThatItHasProperDimension() {
         XCTAssertEqual(Matrix4.dimension, 4)
@@ -57,6 +59,8 @@ class Matrix4SubscriptTests: XCTestCase {
         XCTAssertEqual(m[1,2], 42.0)
     }
 }
+
+// MARK: - Matrix3
 
 class Matrix3Tests: XCTestCase {
     func testThatItHasProperDimension() {
