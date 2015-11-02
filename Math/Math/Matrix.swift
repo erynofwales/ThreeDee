@@ -85,7 +85,7 @@ public struct Matrix4: Matrix {
         get {
             return data[idx]
         }
-        set(value) {
+        mutating set(value) {
             data[idx] = value
         }
     }
@@ -94,7 +94,7 @@ public struct Matrix4: Matrix {
         get {
             return data[indexFromCoordinates(row, col)]
         }
-        set(value) {
+        mutating set(value) {
             data[indexFromCoordinates(row, col)] = value
         }
     }
@@ -135,7 +135,7 @@ public struct Matrix3: Matrix {
         get {
             return data[idx]
         }
-        set(value) {
+        mutating set(value) {
             data[idx] = value
         }
     }
@@ -144,7 +144,7 @@ public struct Matrix3: Matrix {
         get {
             return data[indexFromCoordinates(row, col)]
         }
-        set(value) {
+        mutating set(value) {
             data[indexFromCoordinates(row, col)] = value
         }
     }
