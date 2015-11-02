@@ -21,11 +21,12 @@ class Matrix4Tests: XCTestCase {
 }
 
 class Matrix4SubscriptTests: XCTestCase {
-    var m: Matrix4! = nil
+    let values: [Float] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    var m = Matrix4()
 
     override func setUp() {
         do {
-            m = try Matrix4(values: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15])
+            m = try Matrix4(values: values)
         } catch {
             XCTFail()
         }
@@ -69,12 +70,14 @@ class Matrix3Tests: XCTestCase {
 }
 
 class Matrix3SubscriptTests: XCTestCase {
-    var m: Matrix3! = nil
+    var values: [Float] = [0,1,2,3,4,5,6,7,8]
+    var m = Matrix3()
 
     override func setUp() {
-        m = Matrix3()
-        for i in 0..<Matrix3.count {
-            m[i] = Float(i)
+        do {
+            m = try Matrix3(values: values)
+        } catch {
+            XCTFail()
         }
     }
 
