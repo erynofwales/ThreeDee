@@ -77,6 +77,54 @@ public struct Matrix4: Matrix {
     }
 
 
+    init(translationWithX x: Float, y: Float, z: Float) {
+        // NOTE: Call will never fail.
+        try! self.init(values: [1, 0, 0, x,
+                                0, 1, 0, y,
+                                0, 0, 1, z,
+                                0, 0, 0, 1])
+    }
+
+    init(scaleWithX x: Float, y: Float, z: Float) {
+        // NOTE: Call will never fail.
+        try! self.init(values: [x, 0, 0, 0,
+                                0, y, 0, 0,
+                                0, 0, z, 0,
+                                0, 0, 0, 1])
+    }
+
+    init(rotationAboutX x: Float) {
+        let c = cos(x)
+        let s = sin(x)
+        try! self.init(values: [1,  0, 0, 0,
+                                0,  c, s, 0,
+                                0, -s, c, 0,
+                                0,  0, 0, 1])
+    }
+
+    init(rotationAboutY y: Float) {
+        let c = cos(y)
+        let s = sin(y)
+        try! self.init(values: [c, 0, -s, 0,
+                                0, 1,  0, 0,
+                                s, 0,  c, 0,
+                                0, 0,  0, 1])
+    }
+
+    init(rotationAboutZ z: Float) {
+        let c = cos(z)
+        let s = sin(z)
+        try! self.init(values: [ c, s, 0, 0,
+                                -s, c, 0, 0,
+                                 0, 0, 1, 0,
+                                 0, 0, 0, 1])
+    }
+
+    init(rotationAboutX x: Float, y: Float, z: Float) {
+        let r = Matrix4(rotationAboutX: x) * Matrix4(rotationAboutY: y) * Matrix4(rotationAboutZ: z)
+        try! self.init(values: r.data)
+    }
+
     public static var dimension: Int {
         return 4
     }
