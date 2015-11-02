@@ -60,6 +60,53 @@ class Matrix4SubscriptTests: XCTestCase {
     }
 }
 
+class Matrix4OperatorTests: XCTestCase {
+    var m = Matrix4()
+    let mValues: [Float] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    var n = Matrix4()
+    let nValues: [Float] = [2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32]
+
+    override func setUp() {
+        do {
+            m = try Matrix4(values: mValues)
+            n = try Matrix4(values: nValues)
+        } catch {
+            XCTFail()
+        }
+    }
+
+    func testThatMatrixNegationWorks() {
+        for el in zip((-m).data, m.data) {
+            XCTAssertEqual(el.0, -el.1)
+        }
+    }
+
+    func testThatScalarMultiplicationWorks() {
+        for el in zip((3 * m).data, m.data) {
+            XCTAssertEqual(el.0, 3 * el.1)
+        }
+    }
+
+    func testThatBinaryMatrixMultiplicationWorks() {
+        /* 
+         * Wolfram Alpha gave me the answer to this multiplication with the 4
+         * factored out. Instead of doing the math by hand, I just mapped (*4)
+         * over the array. :3
+         */
+        XCTAssertEqual((m * n).data, [31,34,37,40,87,98,109,120,143,162,181,200,199,226,253,280].map { $0 * 4 })
+    }
+
+    func testThatBinaryMatrixMultiplicationEqualsWorks() {
+        m *= n
+        /*
+         * Wolfram Alpha gave me the answer to this multiplication with the 4
+         * factored out. Instead of doing the math by hand, I just mapped (*4)
+         * over the array. :3
+         */
+        XCTAssertEqual(m.data, [31,34,37,40,87,98,109,120,143,162,181,200,199,226,253,280].map { $0 * 4 })
+    }
+}
+
 // MARK: - Matrix3
 
 class Matrix3Tests: XCTestCase {
