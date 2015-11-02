@@ -208,7 +208,7 @@ public struct Matrix3: Matrix {
 public prefix func -<T: Matrix>(m: T) -> T {
     var out = m
     for i in 0..<T.count {
-        out[i] -= -out[i]
+        out[i] = -out[i]
     }
     return out
 }
