@@ -12,6 +12,8 @@
 		C005E00A1BE1CBA800F1BD3C /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005E0091BE1CBA800F1BD3C /* MatrixTests.swift */; };
 		C005E0391BE1CC7A00F1BD3C /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005E0381BE1CC7A00F1BD3C /* Matrix.swift */; };
 		C04449C11BE26A0700ABF046 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04449C01BE26A0700ABF046 /* Vector.swift */; };
+		C08C72021BED07BB0030AD52 /* MatrixFunctionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C72011BED07BB0030AD52 /* MatrixFunctionalTests.swift */; };
+		C08C72041BED08900030AD52 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C72031BED08900030AD52 /* Types.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		C005E00B1BE1CBA800F1BD3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C005E0381BE1CC7A00F1BD3C /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		C04449C01BE26A0700ABF046 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
+		C08C72011BED07BB0030AD52 /* MatrixFunctionalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixFunctionalTests.swift; sourceTree = "<group>"; };
+		C08C72031BED08900030AD52 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 				C005DFFD1BE1CBA700F1BD3C /* Math.h */,
 				C005E0381BE1CC7A00F1BD3C /* Matrix.swift */,
 				C04449C01BE26A0700ABF046 /* Vector.swift */,
+				C08C72031BED08900030AD52 /* Types.swift */,
 				C005DFFF1BE1CBA700F1BD3C /* Info.plist */,
 			);
 			path = Math;
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				C005E0091BE1CBA800F1BD3C /* MatrixTests.swift */,
+				C08C72011BED07BB0030AD52 /* MatrixFunctionalTests.swift */,
 				C005E00B1BE1CBA800F1BD3C /* Info.plist */,
 			);
 			path = MathTests;
@@ -200,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C08C72041BED08900030AD52 /* Types.swift in Sources */,
 				C04449C11BE26A0700ABF046 /* Vector.swift in Sources */,
 				C005E0391BE1CC7A00F1BD3C /* Matrix.swift in Sources */,
 			);
@@ -210,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C005E00A1BE1CBA800F1BD3C /* MatrixTests.swift in Sources */,
+				C08C72021BED07BB0030AD52 /* MatrixFunctionalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
