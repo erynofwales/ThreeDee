@@ -20,6 +20,19 @@ class Matrix4Tests: XCTestCase {
         XCTAssertEqual(Matrix4.count, 16)
         XCTAssertEqual(Matrix4().data.count, Matrix4.count)
     }
+
+    func testThatInitThrowsForInvalidSizeOfValuesArray() {
+        do {
+            let m = try Matrix4(values: [])
+            -m
+            XCTFail()
+        } catch MatrixError.InvalidSize(let given, let expected) {
+            XCTAssertEqual(given, 0)
+            XCTAssertEqual(expected, Matrix4.count)
+        } catch {
+            XCTFail()
+        }
+    }
 }
 
 class Matrix4SubscriptTests: XCTestCase {

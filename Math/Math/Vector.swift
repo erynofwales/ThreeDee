@@ -8,8 +8,6 @@
 
 import Foundation
 
-public typealias Float = Swift.Float
-
 /** A vector. */
 public protocol Vector {
     init()
