@@ -108,6 +108,12 @@ public struct Vector3: Vector {
     }
 }
 
+extension Vector3: CustomStringConvertible {
+    public var description: String {
+        return "<\(x), \(y), \(z)>"
+    }
+}
+
 public struct Vector4: Vector {
     private var data: [Float]
 
@@ -154,6 +160,12 @@ public struct Vector4: Vector {
     
     public var w: Float {
         return data[3]
+    }
+}
+
+extension Vector4: CustomStringConvertible {
+    public var description: String {
+        return "<\(x), \(y), \(z), \(w)>"
     }
 }
 
