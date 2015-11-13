@@ -189,6 +189,8 @@ extension Vector3 {
     }
 }
 
+// MARK: Addition
+
 public prefix func -<T: Vector>(v: T) -> T {
     var out = v
     for i in 0..<T.count {
@@ -220,6 +222,8 @@ public func -<T: Vector>(lhs: T, rhs: T) -> T {
     out -= rhs
     return out
 }
+
+// MARK: Multiplication
 
 public func *=<T: Vector>(inout lhs: T, rhs: Float) {
     for i in 0..<T.count {
