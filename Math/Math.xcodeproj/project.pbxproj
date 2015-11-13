@@ -11,9 +11,11 @@
 		C005E0051BE1CBA800F1BD3C /* Math.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C005DFFA1BE1CBA700F1BD3C /* Math.framework */; };
 		C005E00A1BE1CBA800F1BD3C /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005E0091BE1CBA800F1BD3C /* MatrixTests.swift */; };
 		C005E0391BE1CC7A00F1BD3C /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005E0381BE1CC7A00F1BD3C /* Matrix.swift */; };
+		C0211EF01BF59F29006936E7 /* VectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0211EEF1BF59F29006936E7 /* VectorTests.swift */; };
 		C04449C11BE26A0700ABF046 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04449C01BE26A0700ABF046 /* Vector.swift */; };
 		C08C72021BED07BB0030AD52 /* MatrixFunctionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C72011BED07BB0030AD52 /* MatrixFunctionalTests.swift */; };
 		C08C72041BED08900030AD52 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C72031BED08900030AD52 /* Types.swift */; };
+		C08C72061BF0F33A0030AD52 /* TypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C72051BF0F33A0030AD52 /* TypeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +36,11 @@
 		C005E0091BE1CBA800F1BD3C /* MatrixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixTests.swift; sourceTree = "<group>"; };
 		C005E00B1BE1CBA800F1BD3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C005E0381BE1CC7A00F1BD3C /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		C0211EEF1BF59F29006936E7 /* VectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTests.swift; sourceTree = "<group>"; };
 		C04449C01BE26A0700ABF046 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		C08C72011BED07BB0030AD52 /* MatrixFunctionalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixFunctionalTests.swift; sourceTree = "<group>"; };
 		C08C72031BED08900030AD52 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		C08C72051BF0F33A0030AD52 /* TypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 			children = (
 				C005E0091BE1CBA800F1BD3C /* MatrixTests.swift */,
 				C08C72011BED07BB0030AD52 /* MatrixFunctionalTests.swift */,
+				C08C72051BF0F33A0030AD52 /* TypeTests.swift */,
+				C0211EEF1BF59F29006936E7 /* VectorTests.swift */,
 				C005E00B1BE1CBA800F1BD3C /* Info.plist */,
 			);
 			path = MathTests;
@@ -216,7 +222,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C08C72061BF0F33A0030AD52 /* TypeTests.swift in Sources */,
 				C005E00A1BE1CBA800F1BD3C /* MatrixTests.swift in Sources */,
+				C0211EF01BF59F29006936E7 /* VectorTests.swift in Sources */,
 				C08C72021BED07BB0030AD52 /* MatrixFunctionalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
