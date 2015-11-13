@@ -9,7 +9,7 @@
 import Foundation
 
 /** A vector. */
-public protocol Vector {
+public protocol Vector: Equatable, AlmostEquatable {
     init()
 
     /** Number of elements in the vector. */
@@ -246,4 +246,31 @@ public func ×=(inout lhs: Vector3, rhs: Vector3) {
 infix operator × { associativity left precedence 151 }
 public func ×(lhs: Vector3, rhs: Vector3) -> Vector3 {
     return lhs.cross(rhs)
+}
+
+// MARK: Equality
+
+public func ==<T: Vector>(lhs: T, rhs: T) -> Bool {
+    for i in 0..<T.count {
+        if lhs[i] != rhs[i] {
+            return false
+        }
+    }
+    return true
+}
+
+public func ==~<T: Vector>(lhs: T, rhs: T) -> Bool {
+    for i in 0..<T.count {
+        if lhs[i] !==~ rhs[i] {
+            return false
+        }
+    }
+    return true
+}
+
+public func ==~<T: Vector>(lhs: T?, rhs: T?) -> Bool {
+    if let lhs = lhs, rhs = rhs {
+        return lhs ==~ rhs
+    }
+    return false
 }

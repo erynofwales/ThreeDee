@@ -20,11 +20,11 @@ public protocol EquatableWithinEpsilon: Strideable {
     static var Epsilon: Self.Stride { get }
 }
 
-extension Float: EquatableWithinEpsilon {
+extension Float: AlmostEquatable, EquatableWithinEpsilon {
     public static let Epsilon: Float.Stride = 1e-8
 }
 
-extension Double: EquatableWithinEpsilon {
+extension Double: AlmostEquatable, EquatableWithinEpsilon {
     public static let Epsilon: Double.Stride = 1e-16
 }
 
