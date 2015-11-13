@@ -292,10 +292,10 @@ public func *<T: Matrix>(lhs: T, rhs: T) -> T {
 // MARK: Matrix-Vector multiplication
 
 public func *(lhs: Matrix4, rhs: Vector4) -> Vector4 {
-    var out = Vector4()
+    var out = Vector4(x: 0.0, y: 0.0, z: 0.0, w: 0.0)
     for i in 0..<Matrix4.dimension {
         for j in 0..<Matrix4.dimension {
-            out[i] += lhs[i] * rhs[j]
+            out[i] += lhs[i*Matrix4.dimension + j] * rhs[j]
         }
     }
     return out
