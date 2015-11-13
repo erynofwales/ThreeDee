@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:OpenGLRenderer/OpenGLRenderer.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:COLLADA/COLLADA.xcodeproj">
    </FileRef>
    <FileRef
