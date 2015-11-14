@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:OpenGLRenderer/OpenGLRenderer.xcodeproj">
+      location = "group:/Users/eryn/Code/Games/ThreeDee/OpenGLRenderer/Renderer.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:COLLADA/COLLADA.xcodeproj">

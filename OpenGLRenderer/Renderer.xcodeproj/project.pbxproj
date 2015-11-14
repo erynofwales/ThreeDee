@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0211EFF1BF5CBF0006936E7 /* OpenGLRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = C0211EFE1BF5CBF0006936E7 /* OpenGLRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C0211F061BF5CBF0006936E7 /* OpenGLRenderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0211EFB1BF5CBF0006936E7 /* OpenGLRenderer.framework */; };
+		C0211F061BF5CBF0006936E7 /* Renderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0211EFB1BF5CBF0006936E7 /* Renderer.framework */; };
 		C0211F0B1BF5CBF0006936E7 /* OpenGLRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0211F0A1BF5CBF0006936E7 /* OpenGLRendererTests.swift */; };
 		C0211F161BF5CBFD006936E7 /* OpenGLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0211F151BF5CBFD006936E7 /* OpenGLView.swift */; };
 		C0211F181BF5CD05006936E7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0211F171BF5CD05006936E7 /* OpenGL.framework */; };
@@ -25,10 +25,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C0211EFB1BF5CBF0006936E7 /* OpenGLRenderer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenGLRenderer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0211EFB1BF5CBF0006936E7 /* Renderer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Renderer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0211EFE1BF5CBF0006936E7 /* OpenGLRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLRenderer.h; sourceTree = "<group>"; };
 		C0211F001BF5CBF0006936E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C0211F051BF5CBF0006936E7 /* OpenGLRendererTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenGLRendererTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0211F051BF5CBF0006936E7 /* Renderer.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Renderer.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0211F0A1BF5CBF0006936E7 /* OpenGLRendererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGLRendererTests.swift; sourceTree = "<group>"; };
 		C0211F0C1BF5CBF0006936E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0211F151BF5CBFD006936E7 /* OpenGLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenGLView.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0211F061BF5CBF0006936E7 /* OpenGLRenderer.framework in Frameworks */,
+				C0211F061BF5CBF0006936E7 /* Renderer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				C0211F171BF5CD05006936E7 /* OpenGL.framework */,
-				C0211EFD1BF5CBF0006936E7 /* OpenGLRenderer */,
+				C0211EFD1BF5CBF0006936E7 /* OpenGL */,
 				C0211F091BF5CBF0006936E7 /* OpenGLRendererTests */,
 				C0211EFC1BF5CBF0006936E7 /* Products */,
 			);
@@ -68,19 +68,20 @@
 		C0211EFC1BF5CBF0006936E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C0211EFB1BF5CBF0006936E7 /* OpenGLRenderer.framework */,
-				C0211F051BF5CBF0006936E7 /* OpenGLRendererTests.xctest */,
+				C0211EFB1BF5CBF0006936E7 /* Renderer.framework */,
+				C0211F051BF5CBF0006936E7 /* Renderer.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C0211EFD1BF5CBF0006936E7 /* OpenGLRenderer */ = {
+		C0211EFD1BF5CBF0006936E7 /* OpenGL */ = {
 			isa = PBXGroup;
 			children = (
 				C0211EFE1BF5CBF0006936E7 /* OpenGLRenderer.h */,
 				C0211F001BF5CBF0006936E7 /* Info.plist */,
 				C0211F151BF5CBFD006936E7 /* OpenGLView.swift */,
 			);
+			name = OpenGL;
 			path = OpenGLRenderer;
 			sourceTree = "<group>";
 		};
@@ -107,9 +108,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C0211EFA1BF5CBF0006936E7 /* OpenGLRenderer */ = {
+		C0211EFA1BF5CBF0006936E7 /* Renderer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C0211F0F1BF5CBF0006936E7 /* Build configuration list for PBXNativeTarget "OpenGLRenderer" */;
+			buildConfigurationList = C0211F0F1BF5CBF0006936E7 /* Build configuration list for PBXNativeTarget "Renderer" */;
 			buildPhases = (
 				C0211EF61BF5CBF0006936E7 /* Sources */,
 				C0211EF71BF5CBF0006936E7 /* Frameworks */,
@@ -120,14 +121,14 @@
 			);
 			dependencies = (
 			);
-			name = OpenGLRenderer;
+			name = Renderer;
 			productName = OpenGLRenderer;
-			productReference = C0211EFB1BF5CBF0006936E7 /* OpenGLRenderer.framework */;
+			productReference = C0211EFB1BF5CBF0006936E7 /* Renderer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C0211F041BF5CBF0006936E7 /* OpenGLRendererTests */ = {
+		C0211F041BF5CBF0006936E7 /* RendererTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C0211F121BF5CBF0006936E7 /* Build configuration list for PBXNativeTarget "OpenGLRendererTests" */;
+			buildConfigurationList = C0211F121BF5CBF0006936E7 /* Build configuration list for PBXNativeTarget "RendererTests" */;
 			buildPhases = (
 				C0211F011BF5CBF0006936E7 /* Sources */,
 				C0211F021BF5CBF0006936E7 /* Frameworks */,
@@ -138,9 +139,9 @@
 			dependencies = (
 				C0211F081BF5CBF0006936E7 /* PBXTargetDependency */,
 			);
-			name = OpenGLRendererTests;
+			name = RendererTests;
 			productName = OpenGLRendererTests;
-			productReference = C0211F051BF5CBF0006936E7 /* OpenGLRendererTests.xctest */;
+			productReference = C0211F051BF5CBF0006936E7 /* Renderer.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -161,7 +162,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C0211EF51BF5CBF0006936E7 /* Build configuration list for PBXProject "OpenGLRenderer" */;
+			buildConfigurationList = C0211EF51BF5CBF0006936E7 /* Build configuration list for PBXProject "Renderer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -173,8 +174,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C0211EFA1BF5CBF0006936E7 /* OpenGLRenderer */,
-				C0211F041BF5CBF0006936E7 /* OpenGLRendererTests */,
+				C0211EFA1BF5CBF0006936E7 /* Renderer */,
+				C0211F041BF5CBF0006936E7 /* RendererTests */,
 			);
 		};
 /* End PBXProject section */
@@ -218,7 +219,7 @@
 /* Begin PBXTargetDependency section */
 		C0211F081BF5CBF0006936E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C0211EFA1BF5CBF0006936E7 /* OpenGLRenderer */;
+			target = C0211EFA1BF5CBF0006936E7 /* Renderer */;
 			targetProxy = C0211F071BF5CBF0006936E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -324,7 +325,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.erynwells.graphics.OpenGLRenderer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Renderer;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -344,7 +345,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.erynwells.graphics.OpenGLRenderer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Renderer;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -356,7 +357,7 @@
 				INFOPLIST_FILE = OpenGLRendererTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.erynwells.graphics.OpenGLRendererTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Renderer;
 			};
 			name = Debug;
 		};
@@ -367,14 +368,14 @@
 				INFOPLIST_FILE = OpenGLRendererTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.erynwells.graphics.OpenGLRendererTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Renderer;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C0211EF51BF5CBF0006936E7 /* Build configuration list for PBXProject "OpenGLRenderer" */ = {
+		C0211EF51BF5CBF0006936E7 /* Build configuration list for PBXProject "Renderer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C0211F0D1BF5CBF0006936E7 /* Debug */,
@@ -383,21 +384,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C0211F0F1BF5CBF0006936E7 /* Build configuration list for PBXNativeTarget "OpenGLRenderer" */ = {
+		C0211F0F1BF5CBF0006936E7 /* Build configuration list for PBXNativeTarget "Renderer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C0211F101BF5CBF0006936E7 /* Debug */,
 				C0211F111BF5CBF0006936E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		C0211F121BF5CBF0006936E7 /* Build configuration list for PBXNativeTarget "OpenGLRendererTests" */ = {
+		C0211F121BF5CBF0006936E7 /* Build configuration list for PBXNativeTarget "RendererTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C0211F131BF5CBF0006936E7 /* Debug */,
 				C0211F141BF5CBF0006936E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
