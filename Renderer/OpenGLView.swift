@@ -25,10 +25,7 @@ class OpenGLView: NSOpenGLView {
     }
 
     private func setupOpenGL() {
-        if didSetupOpenGL {
-            return
-        }
-
+        guard didSetupOpenGL else { return }
         defer { didSetupOpenGL = true }
 
         let attrs = [NSOpenGLPFAAccelerated,
