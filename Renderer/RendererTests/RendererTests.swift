@@ -1,15 +1,15 @@
 //
-//  OpenGLRendererTests.swift
-//  OpenGLRendererTests
+//  RendererTests.swift
+//  RendererTests
 //
-//  Created by Eryn Wells on 11/12/15.
+//  Created by Eryn Wells on 11/13/15.
 //  Copyright © 2015 Eryn Wells. All rights reserved.
 //
 
 import XCTest
-@testable import OpenGLRenderer
+@testable import Renderer
 
-class OpenGLRendererTests: XCTestCase {
+class RendererTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
