@@ -17,6 +17,16 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         glView.renderer = renderer
     }
+
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        glView.start()
+    }
+
+    override func viewDidDisappear() {
+        super.viewDidDisappear()
+        glView.stop()
+    }
 }
 
 
