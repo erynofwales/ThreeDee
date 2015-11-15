@@ -18,6 +18,15 @@ public class OpenGLView: NSOpenGLView {
     // TODO: Should this be weak?
     public var renderer: FrameRenderer? = nil
 
+    deinit {
+        stopRenderingLoop()
+    }
+
+    override public func awakeFromNib() {
+        setupOpenGL()
+        startRenderingLoop()
+    }
+
     override public func viewWillMoveToSuperview(newSuperview: NSView?) {
         if newSuperview != nil {
             setupOpenGL()
@@ -28,7 +37,7 @@ public class OpenGLView: NSOpenGLView {
     }
 
     private func setupOpenGL() {
-        guard didSetupOpenGL else { return }
+        guard !didSetupOpenGL else { return }
         defer { didSetupOpenGL = true }
 
         let attrs = [NSOpenGLPFAAccelerated,
@@ -65,18 +74,8 @@ public class OpenGLView: NSOpenGLView {
             return
         }
 
-        success = CVDisplayLinkSetOutputHandler(displayLink!) {
-            (displayLink: CVDisplayLink,
-             currentTime: UnsafePointer<CVTimeStamp>,
-             displayTime: UnsafePointer<CVTimeStamp>,
-             optionsIn: CVOptionFlags,
-             optionsOut: UnsafeMutablePointer<CVOptionFlags>) -> CVReturn in
-            var result = kCVReturnSuccess
-            autoreleasepool {
-                result = self.renderAtTime(currentTime.memory)
-            }
-            return result
-        }
+        let unsafeSelf = UnsafeMutablePointer<Void>(unsafeAddressOf(self))
+        success = CVDisplayLinkSetOutputCallback(displayLink!, displayLinkCallback, unsafeSelf)
         guard success == kCVReturnSuccess else {
             // TODO: Throw an error?
             return
@@ -89,7 +88,11 @@ public class OpenGLView: NSOpenGLView {
             return
         }
 
-        CVDisplayLinkStart(displayLink!)
+        success = CVDisplayLinkStart(displayLink!)
+        guard success == kCVReturnSuccess else {
+            // TODO: Throw an error?
+            return
+        }
     }
 
     private func stopRenderingLoop() {
@@ -122,4 +125,20 @@ public class OpenGLView: NSOpenGLView {
 
         return kCVReturnSuccess
     }
+}
+
+private func displayLinkCallback(
+    displayLink: CVDisplayLink,
+    currentTime: UnsafePointer<CVTimeStamp>,
+    outputTime: UnsafePointer<CVTimeStamp>,
+    flags: CVOptionFlags,
+    flagsOut: UnsafeMutablePointer<CVOptionFlags>,
+    context: UnsafeMutablePointer<Void>) -> CVReturn
+{
+    var result = kCVReturnSuccess
+    autoreleasepool {
+        let glView = unsafeBitCast(context, OpenGLView.self)
+        result = glView.renderAtTime(currentTime.memory)
+    }
+    return result
 }
