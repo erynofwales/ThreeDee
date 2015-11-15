@@ -11,11 +11,14 @@ import Cocoa
 import OpenGL
 import CoreVideo
 
-class OpenGLView: NSOpenGLView {
+public class OpenGLView: NSOpenGLView {
     private var didSetupOpenGL = false
     private var displayLink: CVDisplayLink? = nil
 
-    override func viewWillMoveToSuperview(newSuperview: NSView?) {
+    // TODO: Should this be weak?
+    public var renderer: FrameRenderer? = nil
+
+    override public func viewWillMoveToSuperview(newSuperview: NSView?) {
         if newSuperview != nil {
             setupOpenGL()
             startRenderingLoop()
@@ -70,7 +73,7 @@ class OpenGLView: NSOpenGLView {
              optionsOut: UnsafeMutablePointer<CVOptionFlags>) -> CVReturn in
             var result = kCVReturnSuccess
             autoreleasepool {
-                result = self._renderAtTime(currentTime.memory)
+                result = self.renderAtTime(currentTime.memory)
             }
             return result
         }
@@ -95,7 +98,28 @@ class OpenGLView: NSOpenGLView {
         displayLink = nil
     }
 
-    private func _renderAtTime(time: CVTimeStamp) -> CVReturn {
+    private func renderAtTime(time: CVTimeStamp) -> CVReturn {
+        let context: NSOpenGLContext! = self.openGLContext
+
+        guard context != nil else {
+            // TODO: Throw an error? Log something?
+            return kCVReturnError
+        }
+        guard renderer != nil else {
+            // This is actually okay, we just don't render anything.
+            return kCVReturnSuccess
+        }
+
+        context.makeCurrentContext()
+        // TODO: OpenGLContext.clearCurrentContext()?
+
+        CGLLockContext(context.CGLContextObj)
+        defer { CGLUnlockContext(context.CGLContextObj) }
+
+        // Render the frame.
+        renderer!.renderAtTime(time)
+        context.flushBuffer()
+
         return kCVReturnSuccess
     }
 }
