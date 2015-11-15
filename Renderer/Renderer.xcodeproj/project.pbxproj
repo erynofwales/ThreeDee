@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C08379711BF869FD000F4856 /* OpenGLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08379701BF869FD000F4856 /* OpenGLView.swift */; };
+		C08379791BF8EE97000F4856 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08379781BF8EE97000F4856 /* GLKit.framework */; };
+		C083797A1BF8EF18000F4856 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08379761BF8EE6A000F4856 /* OpenGL.framework */; };
 		C0B61B971BF70FD200B91C36 /* Renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = C0B61B961BF70FD200B91C36 /* Renderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0B61B9E1BF70FD200B91C36 /* Renderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B61B931BF70FD200B91C36 /* Renderer.framework */; };
 		C0B61BA31BF70FD200B91C36 /* RendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B61BA21BF70FD200B91C36 /* RendererTests.swift */; };
@@ -26,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		C08379701BF869FD000F4856 /* OpenGLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenGLView.swift; path = OpenGL/OpenGLView.swift; sourceTree = "<group>"; };
+		C08379761BF8EE6A000F4856 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		C08379781BF8EE97000F4856 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		C0B61B931BF70FD200B91C36 /* Renderer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Renderer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B61B961BF70FD200B91C36 /* Renderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Renderer.h; sourceTree = "<group>"; };
 		C0B61B981BF70FD200B91C36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C083797A1BF8EF18000F4856 /* OpenGL.framework in Frameworks */,
+				C08379791BF8EE97000F4856 /* GLKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +101,8 @@
 		C0B61BAD1BF70FDC00B91C36 /* OpenGL */ = {
 			isa = PBXGroup;
 			children = (
+				C08379781BF8EE97000F4856 /* GLKit.framework */,
+				C08379761BF8EE6A000F4856 /* OpenGL.framework */,
 				C08379701BF869FD000F4856 /* OpenGLView.swift */,
 			);
 			name = OpenGL;

@@ -21,11 +21,6 @@ public class OpenGLView: NSOpenGLView {
         stopRenderingLoop()
     }
 
-    override public func awakeFromNib() {
-        setupOpenGL()
-        startRenderingLoop()
-    }
-
     override public func prepareOpenGL() {
         super.prepareOpenGL()
 
