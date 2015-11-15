@@ -8,7 +8,7 @@
 
 import Foundation
 import Cocoa
-import OpenGL
+import GLKit
 import CoreVideo
 
 public class OpenGLView: NSOpenGLView, RenderingSurface {
@@ -34,6 +34,14 @@ public class OpenGLView: NSOpenGLView, RenderingSurface {
         } else {
             stopRenderingLoop()
         }
+    }
+
+    override public func prepareOpenGL() {
+        super.prepareOpenGL()
+
+        glClearColor(0.16, 0.17, 0.21, 1.0)
+        glEnable(GLenum(GL_DEPTH_TEST))
+        glDepthFunc(GLenum(GL_LESS))
     }
 
     private func setupOpenGL() {
