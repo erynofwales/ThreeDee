@@ -11,15 +11,15 @@ import Cocoa
 import OpenGL
 import CoreVideo
 
-public class OpenGLView: NSOpenGLView {
+public class OpenGLView: NSOpenGLView, RenderingSurface {
     private var didSetupOpenGL = false
     private var displayLink: CVDisplayLink? = nil
 
-    // TODO: Should this be weak?
     public var renderer: FrameRenderer? = nil
 
     deinit {
         stopRenderingLoop()
+        renderer = nil
     }
 
     override public func awakeFromNib() {
@@ -120,7 +120,7 @@ public class OpenGLView: NSOpenGLView {
         defer { CGLUnlockContext(context.CGLContextObj) }
 
         // Render the frame.
-        renderer!.renderAtTime(time)
+        renderer!.renderOntoSurface(self, atTime: time)
         context.flushBuffer()
 
         return kCVReturnSuccess

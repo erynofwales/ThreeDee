@@ -10,6 +10,10 @@ import CoreVideo
 
 public typealias FrameTimeStamp = CVTimeStamp
 
+public protocol RenderingSurface {
+    var bounds: CGRect { get }
+}
+
 public protocol FrameRenderer {
-    func renderAtTime(time: FrameTimeStamp)
+    func renderOntoSurface(surface: RenderingSurface, atTime time: FrameTimeStamp)
 }
