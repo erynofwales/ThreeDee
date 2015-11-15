@@ -11,7 +11,7 @@ import Cocoa
 import GLKit
 import CoreVideo
 
-public class OpenGLView: NSOpenGLView, RenderingSurface {
+public class OpenGLView: NSOpenGLView {
     private var didSetupOpenGL = false
     private var displayLink: CVDisplayLink? = nil
 
@@ -26,21 +26,16 @@ public class OpenGLView: NSOpenGLView, RenderingSurface {
         startRenderingLoop()
     }
 
-    override public func viewWillMoveToSuperview(newSuperview: NSView?) {
-        if newSuperview != nil {
-            setupOpenGL()
-            startRenderingLoop()
-        } else {
-            stopRenderingLoop()
-        }
-    }
-
     override public func prepareOpenGL() {
         super.prepareOpenGL()
+
+        setupOpenGL()
 
         glClearColor(0.16, 0.17, 0.21, 1.0)
         glEnable(GLenum(GL_DEPTH_TEST))
         glDepthFunc(GLenum(GL_LESS))
+
+        setupDisplayLink()
     }
 
     private func setupOpenGL() {
@@ -72,7 +67,7 @@ public class OpenGLView: NSOpenGLView, RenderingSurface {
         wantsBestResolutionOpenGLSurface = true
     }
 
-    private func startRenderingLoop() {
+    private func setupDisplayLink() {
         var success = kCVReturnSuccess
 
         success = CVDisplayLinkCreateWithActiveCGDisplays(&displayLink)
@@ -94,27 +89,25 @@ public class OpenGLView: NSOpenGLView, RenderingSurface {
             // TODO: Throw an error?
             return
         }
+    }
 
-        success = CVDisplayLinkStart(displayLink!)
-        guard success == kCVReturnSuccess else {
-            // TODO: Throw an error?
-            return
-        }
+    private func startRenderingLoop() {
+        guard displayLink != nil else { return }
+        CVDisplayLinkStart(displayLink!)
     }
 
     private func stopRenderingLoop() {
         guard displayLink != nil else { return }
         CVDisplayLinkStop(displayLink!)
-        displayLink = nil
     }
 
     private func renderAtTime(time: CVTimeStamp) -> CVReturn {
         let context: NSOpenGLContext! = self.openGLContext
-
         guard context != nil else {
             // TODO: Throw an error? Log something?
             return kCVReturnError
         }
+
         guard renderer != nil else {
             // This is actually okay, we just don't render anything.
             return kCVReturnSuccess
@@ -131,6 +124,16 @@ public class OpenGLView: NSOpenGLView, RenderingSurface {
         context.flushBuffer()
 
         return kCVReturnSuccess
+    }
+}
+
+extension OpenGLView: RenderingSurface {
+    public func start() {
+        startRenderingLoop()
+    }
+
+    public func stop() {
+        stopRenderingLoop()
     }
 }
 

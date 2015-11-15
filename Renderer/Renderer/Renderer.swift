@@ -11,7 +11,13 @@ import CoreVideo
 public typealias FrameTimeStamp = CVTimeStamp
 
 public protocol RenderingSurface {
+    /// Bounds in pixels of this surface.
     var bounds: CGRect { get }
+
+    /// Start the rendering loop for this surface.
+    func start()
+    /// Stop the rendering loop for this surface.
+    func stop()
 }
 
 public protocol FrameRenderer {
