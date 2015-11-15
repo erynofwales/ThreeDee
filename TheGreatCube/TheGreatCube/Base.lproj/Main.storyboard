@@ -686,6 +686,10 @@
                         </constraints>
                         <animations/>
                     </view>
+                    <connections>
+                        <outlet property="glView" destination="cQZ-nE-Tvw" id="2ih-LJ-Yi3"/>
+                        <outlet property="view" destination="m2S-Jp-Qdl" id="Wb4-iy-ZwT"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

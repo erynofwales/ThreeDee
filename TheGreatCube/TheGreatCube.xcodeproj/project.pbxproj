@@ -11,7 +11,6 @@
 		C0B61BC11BF85AB800B91C36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B61BC01BF85AB800B91C36 /* ViewController.swift */; };
 		C0B61BC31BF85AB800B91C36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B61BC21BF85AB800B91C36 /* Assets.xcassets */; };
 		C0B61BC61BF85AB800B91C36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0B61BC41BF85AB800B91C36 /* Main.storyboard */; };
-		C0B61BCF1BF85AD000B91C36 /* Renderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B61BCE1BF85AD000B91C36 /* Renderer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +20,6 @@
 		C0B61BC21BF85AB800B91C36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0B61BC51BF85AB800B91C36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0B61BC71BF85AB800B91C36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C0B61BCE1BF85AD000B91C36 /* Renderer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Renderer.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ThreeDee-gsfupkmqirobwqdscegzoiqzjodu/Build/Products/Debug/Renderer.framework"; sourceTree = "<group>"; };
-		C0B61BD01BF85AD400B91C36 /* Math.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Math.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ThreeDee-gsfupkmqirobwqdscegzoiqzjodu/Build/Products/Debug/Math.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,7 +27,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0B61BCF1BF85AD000B91C36 /* Renderer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +36,6 @@
 		C0B61BB21BF85AB800B91C36 = {
 			isa = PBXGroup;
 			children = (
-				C0B61BD01BF85AD400B91C36 /* Math.framework */,
-				C0B61BCE1BF85AD000B91C36 /* Renderer.framework */,
 				C0B61BBD1BF85AB800B91C36 /* TheGreatCube */,
 				C0B61BBC1BF85AB800B91C36 /* Products */,
 			);
@@ -279,6 +273,7 @@
 				C0B61BCC1BF85AB800B91C36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

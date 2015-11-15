@@ -7,21 +7,21 @@
 //
 
 import Cocoa
+import Renderer
 
 class ViewController: NSViewController {
+    @IBOutlet var glView: OpenGLView!
+    let renderer = FrameRenderer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        glView.renderer = renderer
     }
-
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
 }
 
+
+class FrameRenderer: Renderer.FrameRenderer {
+    func renderAtTime(time: FrameTimeStamp) {
+        glClear(GLbitfield(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT))
+    }
+}
