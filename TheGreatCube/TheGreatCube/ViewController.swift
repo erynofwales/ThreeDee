@@ -21,7 +21,9 @@ class ViewController: NSViewController {
 
 
 class FrameRenderer: Renderer.FrameRenderer {
-    func renderAtTime(time: FrameTimeStamp) {
+    func renderOntoSurface(surface: RenderingSurface, atTime time: FrameTimeStamp) {
         glClear(GLbitfield(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT))
+        let bounds = surface.bounds
+        glViewport(GLint(bounds.origin.x), GLint(bounds.origin.y), GLint(bounds.size.width), GLint(bounds.size.height))
     }
 }
