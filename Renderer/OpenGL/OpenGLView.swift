@@ -19,7 +19,6 @@ public class OpenGLView: NSOpenGLView, RenderingSurface {
 
     deinit {
         stopRenderingLoop()
-        renderer = nil
     }
 
     override public func awakeFromNib() {
