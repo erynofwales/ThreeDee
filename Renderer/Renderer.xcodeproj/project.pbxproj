@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C08379711BF869FD000F4856 /* OpenGLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08379701BF869FD000F4856 /* OpenGLView.swift */; };
 		C0B61B971BF70FD200B91C36 /* Renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = C0B61B961BF70FD200B91C36 /* Renderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0B61B9E1BF70FD200B91C36 /* Renderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B61B931BF70FD200B91C36 /* Renderer.framework */; };
 		C0B61BA31BF70FD200B91C36 /* RendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B61BA21BF70FD200B91C36 /* RendererTests.swift */; };
-		C0B61BAF1BF70FE800B91C36 /* OpenGLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B61BAE1BF70FE800B91C36 /* OpenGLView.swift */; };
 		C0B61BB11BF8085B00B91C36 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B61BB01BF8085B00B91C36 /* Renderer.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,13 +25,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C08379701BF869FD000F4856 /* OpenGLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenGLView.swift; path = OpenGL/OpenGLView.swift; sourceTree = "<group>"; };
 		C0B61B931BF70FD200B91C36 /* Renderer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Renderer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B61B961BF70FD200B91C36 /* Renderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Renderer.h; sourceTree = "<group>"; };
 		C0B61B981BF70FD200B91C36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0B61B9D1BF70FD200B91C36 /* RendererTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RendererTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B61BA21BF70FD200B91C36 /* RendererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RendererTests.swift; sourceTree = "<group>"; };
 		C0B61BA41BF70FD200B91C36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C0B61BAE1BF70FE800B91C36 /* OpenGLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenGLView.swift; sourceTree = "<group>"; };
 		C0B61BB01BF8085B00B91C36 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +95,7 @@
 		C0B61BAD1BF70FDC00B91C36 /* OpenGL */ = {
 			isa = PBXGroup;
 			children = (
-				C0B61BAE1BF70FE800B91C36 /* OpenGLView.swift */,
+				C08379701BF869FD000F4856 /* OpenGLView.swift */,
 			);
 			name = OpenGL;
 			sourceTree = "<group>";
@@ -209,7 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0B61BB11BF8085B00B91C36 /* Renderer.swift in Sources */,
-				C0B61BAF1BF70FE800B91C36 /* OpenGLView.swift in Sources */,
+				C08379711BF869FD000F4856 /* OpenGLView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
